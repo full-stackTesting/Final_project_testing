@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AutomationExerciseSuite">
+
+    <test name="TC06_ContactUsForm">
+        <classes>
+            <class name="tests.TC06_ContactUsForm"/>
+            <class name="tests.TC22_AddToCartFromRecommendedItems"/>
+            <class name="tests.TC17_RemoveProductsFromCart"/>
+            <class name="tests.TC13_VerifyProductQuantityInCart"/>
+             <class name="tests.TC12_AddProductsInCart"/>
+            <class name="tests.TC11_VerifySubscriptionCartPage"/>
+            <class name="tests.TC10_VerifySubscriptionHomePage"/>
+
+
+        </classes>
+    </test>
+
+    <test name="TC10_VerifySubscriptionHomePage">
+        <classes>
+        </classes>
+    </test>
+
+    <test name="TC11_VerifySubscriptionCartPage">
+        <classes>
+        </classes>
+    </test>
+
+    <test name="TC12_AddProductsInCart">
+        <classes>
+        </classes>
+    </test>
+
+    <test name="TC13_VerifyProductQuantityInCart">
+        <classes>
+        </classes>
+    </test>
+
+    <test name="TC17_RemoveProductsFromCart">
+        <classes>
+        </classes>
+    </test>
+
+    <test name="TC22_AddToCartFromRecommendedItems">
+        <classes>
+        </classes>
+    </test>
+
+</suite>

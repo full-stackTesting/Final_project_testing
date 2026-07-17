@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+
+  <test name="Test_RegisterWhileCheckout">
+    <classes>
+      <class name="tests.TC14_RegisterWhileCheckout"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Test_RegisterBeforeCheckout">
+    <classes>
+      <class name="tests.TC15_RegisterBeforeCheckout"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Test_LoginBeforeCheckout">
+    <classes>
+       <class name="tests.TC16_LoginBeforeCheckout"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Test_VerifyCartBeforeAndAfterLogin">
+    <classes>
+       <class name="tests.T20_VerifyCartBeforeAndAfterLogin"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Test_VerifyAddressDetails">
+    <classes>
+       <class name="tests.TC23_VerifyAddressDetailsInCheckout"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test_DownloadInvoice">
+    <classes>
+       <class name="tests.TC24_DownloadInvoice"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

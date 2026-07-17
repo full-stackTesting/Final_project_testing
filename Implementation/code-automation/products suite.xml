@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Products_Suite">
+  <test name="viewFristProduct">
+    <classes>
+      <class name="tests.ViewProductsPage"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SearchProducts">
+    <classes>
+      <class name="tests.ViewSearchProductsPage"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="ReviewProduct">
+    <classes>
+      <class name="tests.ProductReview"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
