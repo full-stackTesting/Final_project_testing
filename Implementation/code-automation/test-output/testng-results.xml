@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-07-16T02:38:19 EEST" name="Login_Suite" finished-at="2026-07-16T02:40:01 EEST" duration-ms="102259">
+    <groups>
+    </groups>
+    <test started-at="2026-07-16T02:38:19 EEST" name="Login_HappyTest" finished-at="2026-07-16T02:39:03 EEST" duration-ms="43621">
+      <class name="tests.Login_happyScenario">
+        <test-method is-config="true" signature="openWebsite()[pri:0, instance:tests.Login_happyScenario@619713e5]" started-at="2026-07-16T02:38:20 EEST" name="openWebsite" finished-at="2026-07-16T02:38:39 EEST" duration-ms="18369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebsite -->
+        <test-method signature="testLogin_CorrectUsernameAndMatchingPassword(java.lang.String,java.lang.String)[pri:0, instance:tests.Login_happyScenario@619713e5]" started-at="2026-07-16T02:38:39 EEST" name="testLogin_CorrectUsernameAndMatchingPassword" data-provider="loginHappyData" finished-at="2026-07-16T02:39:02 EEST" duration-ms="23600" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ibrahimakram90@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin_CorrectUsernameAndMatchingPassword -->
+        <test-method is-config="true" signature="closeWebsite()[pri:0, instance:tests.Login_happyScenario@619713e5]" started-at="2026-07-16T02:39:02 EEST" name="closeWebsite" finished-at="2026-07-16T02:39:03 EEST" duration-ms="505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeWebsite -->
+      </class> <!-- tests.Login_happyScenario -->
+    </test> <!-- Login_HappyTest -->
+    <test started-at="2026-07-16T02:39:03 EEST" name="Login_NegativeTest" finished-at="2026-07-16T02:40:01 EEST" duration-ms="58560">
+      <class name="tests.Login_NegativeScenario">
+        <test-method is-config="true" signature="openWebsite()[pri:0, instance:tests.Login_NegativeScenario@564fabc8]" started-at="2026-07-16T02:39:03 EEST" name="openWebsite" finished-at="2026-07-16T02:39:24 EEST" duration-ms="20577" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebsite -->
+        <test-method signature="testLogin_IcorrectData(java.lang.String,java.lang.String)[pri:0, instance:tests.Login_NegativeScenario@564fabc8]" started-at="2026-07-16T02:39:24 EEST" name="testLogin_IcorrectData" data-provider="loginNegativeData" finished-at="2026-07-16T02:39:34 EEST" duration-ms="10653" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ibrahimakram90@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123459]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin_IcorrectData -->
+        <test-method is-config="true" signature="closeWebsite()[pri:0, instance:tests.Login_NegativeScenario@564fabc8]" started-at="2026-07-16T02:39:34 EEST" name="closeWebsite" finished-at="2026-07-16T02:39:35 EEST" duration-ms="361" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeWebsite -->
+        <test-method is-config="true" signature="openWebsite()[pri:0, instance:tests.Login_NegativeScenario@564fabc8]" started-at="2026-07-16T02:39:35 EEST" name="openWebsite" finished-at="2026-07-16T02:39:56 EEST" duration-ms="21673" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebsite -->
+        <test-method signature="testLogin_IcorrectData(java.lang.String,java.lang.String)[pri:0, instance:tests.Login_NegativeScenario@564fabc8]" started-at="2026-07-16T02:39:56 EEST" name="testLogin_IcorrectData" data-provider="loginNegativeData" finished-at="2026-07-16T02:40:01 EEST" duration-ms="4557" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ibrahimakram9@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin_IcorrectData -->
+        <test-method is-config="true" signature="closeWebsite()[pri:0, instance:tests.Login_NegativeScenario@564fabc8]" started-at="2026-07-16T02:40:01 EEST" name="closeWebsite" finished-at="2026-07-16T02:40:01 EEST" duration-ms="626" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeWebsite -->
+      </class> <!-- tests.Login_NegativeScenario -->
+    </test> <!-- Login_NegativeTest -->
+  </suite> <!-- Login_Suite -->
+</testng-results>

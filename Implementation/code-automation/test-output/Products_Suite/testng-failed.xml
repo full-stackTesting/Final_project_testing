@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Products_Suite]">
+  <test thread-count="5" name="ReviewProduct(failed)">
+    <classes>
+      <class name="tests.ProductReview">
+        <methods>
+          <include name="verifyAllProductsAndProductDetailPage" invocation-numbers="0"/>
+          <include name="openWebsite"/>
+          <include name="closeWebsite"/>
+        </methods>
+      </class> <!-- tests.ProductReview -->
+    </classes>
+  </test> <!-- ReviewProduct(failed) -->
+</suite> <!-- Failed suite [Products_Suite] -->
