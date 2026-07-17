@@ -1,0 +1,357 @@
+{
+  "info": {
+    "_postman_id": "cc440448-6548-47ae-8853-3197d1f7a7a6",
+    "name": "Delete User Account",
+    "description": "Includes a Setup request to create a fresh account, then TC_DEL_01 to TC_DEL_04 covering DELETE /deleteAccount",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54393943",
+    "_collection_link": "https://go.postman.co/collection/54393943-cc440448-6548-47ae-8853-3197d1f7a7a6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "account to be deleted",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// Generate a unique email each run so this account is always fresh",
+              "const uniqueEmail = `qa_delete_${Date.now()}@automationtest.com`;",
+              "pm.collectionVariables.set('delete_email', uniqueEmail);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const body = pm.response.json();",
+              "",
+              "pm.test('Setup account created successfully (responseCode 201)', function () {",
+              "    pm.expect(body.responseCode).to.eql(201);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "aya"
+            },
+            {
+              "key": "email",
+              "value": "ayaabdelghany@gmail.com"
+            },
+            {
+              "key": "password",
+              "value": "a12345"
+            },
+            {
+              "key": "title",
+              "value": "Mrs"
+            },
+            {
+              "key": "birth_date",
+              "value": "10"
+            },
+            {
+              "key": "birth_month",
+              "value": "5"
+            },
+            {
+              "key": "birth_year",
+              "value": "2000"
+            },
+            {
+              "key": "firstname",
+              "value": "aya"
+            },
+            {
+              "key": "lastname",
+              "value": "abdelghany"
+            },
+            {
+              "key": "company",
+              "value": "Test"
+            },
+            {
+              "key": "address1",
+              "value": "123 Street"
+            },
+            {
+              "key": "address2",
+              "value": "Apt 4"
+            },
+            {
+              "key": "country",
+              "value": "Egypt"
+            },
+            {
+              "key": "zipcode",
+              "value": "12345"
+            },
+            {
+              "key": "state",
+              "value": "Cairo"
+            },
+            {
+              "key": "city",
+              "value": "Cairo"
+            },
+            {
+              "key": "mobile_number",
+              "value": "01000000000"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/createAccount",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "createAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete existing account with valid details",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('HTTP status is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "const body = pm.response.json();",
+              "",
+              "pm.test('responseCode is 200 (Account deleted)', function () {",
+              "    pm.expect(body.responseCode).to.eql(200);",
+              "});--",
+              "",
+              "pm.test(\"message equals 'Account deleted!'\", function () {",
+              "    pm.expect(body.message).to.eql---('Account deleted!');",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "ayaabdelghany@gmail.com"
+            },
+            {
+              "key": "password",
+              "value": "a12345"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/deleteAccount",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "deleteAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete account that never existed",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// This email is intentionally never registered",
+              "pm.collectionVariables.set('nonexistent_email', `no_such_user_${Date.now()}@automationtest.com`);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('HTTP status is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "const body = pm.response.json();",
+              "",
+              "pm.test('responseCode is 200 with Account not found message', function () {",
+              "    pm.expect(body.responseCode).to.eql(200);",
+              "    pm.expect(body.message).to.eql('Account not found!');",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "ayaxxx@gmail.com"
+            },
+            {
+              "key": "password",
+              "value": "a12345"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/deleteAccount",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "deleteAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete without email or password",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('HTTP status is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "const body = pm.response.json();",
+              "",
+              "pm.test('responseCode is 400 (parameter missing)', function () {",
+              "    pm.expect(body.responseCode).to.eql(400);",
+              "});",
+              "",
+              "console.log('Actual response:', JSON.stringify(body));"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/deleteAccount",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "deleteAccount"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "delete_email",
+      "value": ""
+    }
+  ]
+}

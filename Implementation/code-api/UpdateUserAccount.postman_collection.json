@@ -1,0 +1,300 @@
+{
+  "info": {
+    "_postman_id": "a7e0a68f-1925-49e9-ad90-697ae6c62c39",
+    "name": "UpdateUserAccount",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54393943",
+    "_collection_link": "https://go.postman.co/collection/54393943-a7e0a68f-1925-49e9-ad90-697ae6c62c39?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Update Account with valid email&password",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response message is User updated!\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.responseCode).to.eql(200);\r",
+              "    pm.expect(jsonData.message).to.eql(\"User updated!\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "Esraa Mostafa",
+              "type": "text",
+              "uuid": "5ab02ee0-fcc9-4a75-9db7-7d4ca326ce06"
+            },
+            {
+              "key": "email",
+              "value": "em1921038@gmail.com",
+              "type": "text",
+              "uuid": "7a9918d3-4c26-4095-88f8-46a6cbdd0553"
+            },
+            {
+              "key": "password",
+              "value": "Test@1234",
+              "type": "text",
+              "uuid": "a62f01a9-a534-4e7d-b5ad-45d2a48ee4f2"
+            },
+            {
+              "key": "title",
+              "value": "Mrs",
+              "type": "text",
+              "uuid": "99d957f6-4231-41ec-8ada-ae635e5e618a"
+            },
+            {
+              "key": "birth_year",
+              "value": "18",
+              "type": "text",
+              "uuid": "c0efbd6f-8c72-461c-9c38-f85c2559a017"
+            },
+            {
+              "key": "firstname",
+              "value": "6",
+              "type": "text",
+              "uuid": "b6fafc36-283c-4ff2-918c-767e1f22fee8"
+            },
+            {
+              "key": "lastname",
+              "value": "2000",
+              "type": "text",
+              "uuid": "a1ae7969-e9d1-495e-9f8d-94ed34df5290"
+            },
+            {
+              "key": "company",
+              "value": "Esraa",
+              "type": "text",
+              "uuid": "461d65c2-816e-4ff5-8c6a-131db049d1da"
+            },
+            {
+              "key": "address1",
+              "value": "Mostafa",
+              "type": "text",
+              "uuid": "8ca9ecdb-7f91-4a36-98d7-05bad557b2af"
+            },
+            {
+              "key": "address2",
+              "value": "Test Company",
+              "type": "text",
+              "uuid": "409e5370-5a29-44f0-989e-6a17484130c8"
+            },
+            {
+              "key": "country",
+              "value": "123 Test Street",
+              "type": "text",
+              "uuid": "e441caef-ba21-44d2-9daf-78541b932b3c"
+            },
+            {
+              "key": "zipcode",
+              "value": "Area",
+              "type": "text",
+              "uuid": "b49e85fa-0542-499c-9fe9-8aa4c18ab865"
+            },
+            {
+              "key": "state",
+              "value": "Egypt",
+              "type": "text",
+              "uuid": "25649032-cf20-456c-9bab-644f934b2c96"
+            },
+            {
+              "key": "city",
+              "value": "12345",
+              "type": "text",
+              "uuid": "dcb53943-fa66-4864-9968-bebb68227034"
+            },
+            {
+              "key": "mobile_number",
+              "value": "01234567890",
+              "type": "text",
+              "uuid": "c245a5a6-956e-420f-8e84-5b40b9fb4931"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/updateAccount",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "updateAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Account with invalid(email/password)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response code is 400\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.responseCode).to.eql(400);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response message is correct\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.message).to.eql(\"Bad request, email parameter is missing in PUT request.\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "Esraa Mostafa",
+              "type": "text",
+              "uuid": "dddcc05f-0359-4982-ac47-361379592bd8"
+            },
+            {
+              "key": "email",
+              "value": "null",
+              "type": "text",
+              "uuid": "ddf957b3-eb88-431a-88b6-0148a007ba75",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "Test@1234",
+              "type": "text",
+              "uuid": "038cbc42-bd60-4814-a0d7-dcc33692c9ac"
+            },
+            {
+              "key": "title",
+              "value": "Mrs",
+              "type": "text",
+              "uuid": "6ee2b0a2-005e-4ec3-b51f-40439d3aea43"
+            },
+            {
+              "key": "birth_date",
+              "value": "18",
+              "type": "text",
+              "uuid": "e4ecc672-be49-4f23-aa55-39723f2a6863"
+            },
+            {
+              "key": "birth_month",
+              "value": "6",
+              "type": "text",
+              "uuid": "43ff6d90-ff3c-4821-b3a7-229b99fa2ceb"
+            },
+            {
+              "key": "birth_year",
+              "value": "2000",
+              "type": "text",
+              "uuid": "a57d2adb-894e-4e0d-bb52-b621a45b261d"
+            },
+            {
+              "key": "firstname",
+              "value": "Esraa",
+              "type": "text",
+              "uuid": "95077d91-e6d5-401c-af58-e6355f59f12c"
+            },
+            {
+              "key": "lastname",
+              "value": "Mostafa",
+              "type": "text",
+              "uuid": "4db2c508-8fff-4f1a-ad44-e3d4c600822e"
+            },
+            {
+              "key": "company",
+              "value": "Test Compant",
+              "type": "text",
+              "uuid": "28f7225f-e03f-4e73-9df4-7c782ece2a83"
+            },
+            {
+              "key": "address1",
+              "value": "123 Test Street",
+              "type": "text",
+              "uuid": "0e02f796-1796-40b9-97b4-e47da751c28d"
+            },
+            {
+              "key": "address2",
+              "value": "Area",
+              "type": "text",
+              "uuid": "cd8ead04-c363-4abc-a7b5-d62933b1d353"
+            },
+            {
+              "key": "country",
+              "value": "Egypt",
+              "type": "text",
+              "uuid": "73d002bd-e99e-4a72-90ff-edd3f7441b51"
+            },
+            {
+              "key": "zipcode",
+              "value": "12345",
+              "type": "text",
+              "uuid": "ca86a46c-0954-4032-88e5-084e8cf1a3a7"
+            },
+            {
+              "key": "state",
+              "value": "Assuit",
+              "type": "text",
+              "uuid": "42fd42d7-41cf-4b33-b154-96853a51cebc"
+            },
+            {
+              "key": "city",
+              "value": "Assuit",
+              "type": "text",
+              "uuid": "83ba53d5-53a1-4b5d-83fc-c64cffb65bf6"
+            },
+            {
+              "key": "mobile_number",
+              "value": "01234567890",
+              "type": "text",
+              "uuid": "39ebdce0-00d7-4658-8cd7-41361b8f1863"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/updateAccount",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "updateAccount"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
