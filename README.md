@@ -107,6 +107,3 @@ API testing was performed using **Postman** against the Automation Exercise publ
 
 This project is for educational and practice purposes using the public [Automation Exercise](https://automationexercise.com) demo website.
 
----
-
-<p align="center">Made with 🧪 for QA practice</p>
